@@ -3207,3 +3207,282 @@ body{
         font-size: 8px;
     }
 }
+
+/* =================================
+   WEBSITE APPLICATION CTA
+================================= */
+
+.application-cta {
+    width: min(1000px, 92%);
+    margin: 80px auto;
+}
+
+.application-card {
+    position: relative;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(0, 217, 255, .3);
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 217, 255, .06),
+            rgba(255, 255, 255, .015),
+            rgba(123, 44, 255, .05)
+        );
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 0 35px rgba(0, 217, 255, .08),
+        inset 0 0 35px rgba(0, 217, 255, .02);
+
+    transition: .4s ease;
+}
+
+
+/* Moving tech line */
+
+.application-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 70%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #00d9ff,
+            #ffffff,
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px #00d9ff;
+
+    animation: applicationScan 4s linear infinite;
+}
+
+@keyframes applicationScan {
+
+    from {
+        left: -70%;
+    }
+
+    to {
+        left: 120%;
+    }
+}
+
+
+/* Background glow */
+
+.application-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: #00d9ff;
+
+    opacity: .025;
+
+    filter: blur(90px);
+
+    pointer-events: none;
+}
+
+
+/* Tag */
+
+.application-tag {
+    position: relative;
+    z-index: 1;
+
+    color: #00d9ff;
+
+    font-family: monospace;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 8px rgba(0, 217, 255, .6);
+}
+
+
+/* Heading */
+
+.application-card h2 {
+    position: relative;
+    z-index: 1;
+
+    margin: 12px 0;
+
+    color: #ffffff;
+
+    font-size: clamp(30px, 5vw, 48px);
+}
+
+.application-card h2 span {
+    color: #00d9ff;
+
+    text-shadow:
+        0 0 10px rgba(0, 217, 255, .6),
+        0 0 25px rgba(0, 217, 255, .2);
+}
+
+
+/* Description */
+
+.application-card p {
+    position: relative;
+    z-index: 1;
+
+    max-width: 620px;
+
+    margin: 0 auto 25px;
+
+    color: #91a4b8;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* Button */
+
+.application-button {
+    position: relative;
+    z-index: 1;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 14px 22px;
+
+    color: #00d9ff;
+
+    text-decoration: none;
+
+    font-family: monospace;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    background:
+        rgba(0, 217, 255, .06);
+
+    border: 1px solid rgba(0, 217, 255, .4);
+
+    border-radius: 8px;
+
+    transition: .3s ease;
+}
+
+
+.application-arrow {
+    font-size: 18px;
+
+    transition: .3s ease;
+}
+
+
+.application-button:hover {
+
+    color: #061018;
+
+    background: #00d9ff;
+
+    border-color: #00d9ff;
+
+    box-shadow:
+        0 0 15px rgba(0, 217, 255, .6),
+        0 0 35px rgba(0, 217, 255, .2);
+
+    transform: translateY(-3px);
+}
+
+
+.application-button:hover .application-arrow {
+    transform: translate(4px, -4px);
+}
+
+
+/* Small text */
+
+.application-card small {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+
+    margin-top: 14px;
+
+    color: #627383;
+
+    font-family: monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+}
+
+
+/* Hover card */
+
+.application-card:hover {
+    border-color: rgba(0, 217, 255, .6);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, .4),
+        0 0 30px rgba(0, 217, 255, .12);
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .application-card {
+        padding: 35px 20px;
+    }
+
+    .application-card p {
+        font-size: 13px;
+    }
+
+    .application-button {
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+}
