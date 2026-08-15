@@ -1,4 +1,4 @@
-# MYRUS Portfolio
+# MIZCYR Portfolio
 
 Personal portfolio website for Mwanza Misheck Cyrus.
 
